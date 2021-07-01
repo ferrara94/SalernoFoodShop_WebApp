@@ -10,6 +10,8 @@ The project follows the **MVC** {Model-View-Controller} model/pattern.
 
 The Application is related to Food Shop World, but they are based on a limited number of entities. 
 
+At the startup, Spring calls **population** services to populate the Database using the **Spring Context**.
+
 The project is a **SpringBoot** project, so most of the Configurations are provided by default.
 
 ---
