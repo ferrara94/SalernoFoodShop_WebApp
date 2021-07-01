@@ -46,6 +46,8 @@ where the *project* is located (into the project folder)
 - [ ] Foodstuff
 - [ ] Item
 
+---
+
 #### > persistence & repository 
 
 Persistence is represented by the in-memory database called H2 Database.
@@ -57,4 +59,9 @@ Classes which implements JPA interfaces have the **DAO** at the end of the name 
 In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
 
 ![image](https://user-images.githubusercontent.com/45211249/124113164-696c6780-da6b-11eb-8061-a26a96831d85.png)
+
+---
+#### > execution
+
+![image](https://user-images.githubusercontent.com/45211249/124114446-df250300-da6c-11eb-848a-9efa1bc906cc.png)
 
