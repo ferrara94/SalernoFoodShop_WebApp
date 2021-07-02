@@ -52,7 +52,7 @@ where the *project* is located (into the project folder)
 
 Persistence is represented by the in-memory database called H2 Database.
 
-Classes which implements JPA interfaces have the **DAO** at the end of the name and they allow access to data.
+Classes which implement JPA interfaces have the **DAO** at the end of the name and they allow access to data.
 
 **DAO** stands for Data-Access-Object.
 
