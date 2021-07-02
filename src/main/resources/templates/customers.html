@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	    <meta charset="UTF-8"/>
+	    <title>Customers Page</title>
+		    
+		<link th:href="@{/styles/css/homepage.css}" rel="stylesheet" />
+		<link th:href="@{/styles/css/customers.css}" rel="stylesheet" />
+	
+	</head>
+	
+	 <body>
+        
+        <!-- NAV BAR -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Salerno FoodShop</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        
+                    </ul>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <!-- END NAV BAR -->
+        
+        <!-- <!-- Product section-->
+        <section class="py-1">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    
+                    
+                </div>
+            </div>
+        </section> 
+        
+        <!-- ITEMS SECTION -->
+        <section class="py-5 bg-light">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2 th:text="${infoPage}+' list'" class="fw-bolder mb-4"></h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    
+                   
+                  <div th:each="customer: ${customers}" >
+                   		
+                   		<!-- Author-->
+				        <div class="col-lg-3 col-sm-6 mb-30 pb-2 customerWidth">
+				            <div class="team-card-style-3 mx-auto">
+				                <div class="team-thumb"><img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Author Picture">
+				                </div>
+				                <h4 th:text="${customer.getName()}+' '+${customer.getSurname()}" class="team-name">
+				                </h4>
+				                
+				                <a class="team-contact-link" href="tel:+19871625346">
+				                	<i class="fe-icon-phone"></i>+1 (987) 162 53 46</a>
+				                <a class="team-contact-link" href="mailto:info@example.com">
+				                	<i th:text="${customer.getE_mail()}" class="fe-icon-mail"></i></a>
+				                
+				                <div class="team-social-bar-wrap">
+				                    <div class="team-social-bar">
+				                    	<form th:action="@{'/customers/customer/'+${customer.getId()}}">
+				                        	<button type="submit" class="btn btn-primary deleteBtn" >
+									      		   View
+									      	</button>
+									     </form>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+                   		
+                  </div>
+                
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- END CUSTOMERS SECTION -->
+
+		<!-- FOOTER-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Ferrara Software Engineering 2021</p></div>
+        </footer>        
+
+    </body>
+	
+	
+	
+
+</html>

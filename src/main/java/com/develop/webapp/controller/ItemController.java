@@ -61,12 +61,6 @@ public class ItemController {
 		return "allItems";	
 	}
 	
-	@GetMapping(value ="items/populateDB")
-	public String populateDB() {
-				
-		service.populateDB();
-		
-		return "success";		
-	}
+	
 	
 }

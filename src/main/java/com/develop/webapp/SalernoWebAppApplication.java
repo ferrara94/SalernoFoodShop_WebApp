@@ -4,8 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.develop.webapp.controller.FoodstuffController;
-import com.develop.webapp.controller.ItemController;
+import com.develop.webapp.service.CustomerService;
+import com.develop.webapp.service.FoodstuffService;
+import com.develop.webapp.service.ItemService;
 
 @SpringBootApplication
 public class SalernoWebAppApplication {
@@ -17,11 +18,15 @@ public class SalernoWebAppApplication {
 		/*
 		    Database Population at startup
 		 */		
-		ItemController items = context.getBean(ItemController.class);
+		ItemService items = context.getBean(ItemService.class);
 		items.populateDB();
 		
-		FoodstuffController foodstuffs = context.getBean(FoodstuffController.class) ;
+		FoodstuffService foodstuffs = context.getBean(FoodstuffService.class) ;
 		foodstuffs.populateDB();
+		
+		CustomerService customers = context.getBean(CustomerService.class);
+		customers.populateDB();
+		
 	}
 
 }

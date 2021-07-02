@@ -6,6 +6,7 @@
 	    <title></title>
 		    
 		<link th:href="@{/styles/css/homepage.css}" rel="stylesheet" />
+		<script type="text/javascript" th:src="@{/js/alertItemsFile.js}"></script>
 		
 	</head>
 	
@@ -91,7 +92,12 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Description</a></div>
+                                <div class="text-center">
+                                	<button class="btn btn-outline-dark mt-auto" id="show1"
+		                            	th:onclick="showAlert()">	
+		                                		Description
+	                                	</button>
+                                </div>
                             </div>
                         </div>
                     </div>

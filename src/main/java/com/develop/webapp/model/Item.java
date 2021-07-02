@@ -27,6 +27,9 @@ public class Item implements Serializable{
 	@Column(name = "PRICE")
 	private double price;
 	
+	@Column(name = "DESCRIPTION")
+	private String description;
+	
 	/*
 	 @Temporal(TemporalType.DATE)
 	 private Date dataCreation;
@@ -38,12 +41,24 @@ public class Item implements Serializable{
 	
 	public Item() {}
 	
-	public Item(String name, String foodstuff, double price) {
+	public Item(String name, String foodstuff, double price, String description) {
 		super();
 		this.name = name;
 		this.foodstuff = foodstuff;
 		this.price = price;
+		this.description = description;
 	}
+	
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getName() {
 		return name;
 	}

@@ -12,12 +12,6 @@ public class FoodstuffController {
 	@Autowired
 	FoodstuffService service;
 	
-	@GetMapping(value ="foodstuff/populateDB")
-	public String populateDB() {
-				
-		service.populateDB();
-		
-		return "success";		
-	}
+	
 	
 }
