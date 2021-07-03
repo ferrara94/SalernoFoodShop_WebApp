@@ -34,11 +34,20 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		List<Customer> customers = new LinkedList<>();
 		
-		customers.add(new Customer("Marco", "Alonsi","marcoalonsi90@gmail.com"));
-		customers.add(new Customer("Giovanni", "Capo","giovannicapo87@gmail.com"));
-		customers.add(new Customer("Franco", "Albertazzi","francoalberti78@hotmail.it"));
+		customers.add(new Customer("Marco", "Alonsi",
+				"marcoalonsi90@gmail.com", "333-4567888"));
+		customers.add(new Customer("Giovanni", 
+				"Capo","giovannicapo87@gmail.com","344-4067890"));
+		customers.add(new Customer("Franco", "Albertazzi",
+				"francoalberti78@hotmail.it","345-4562868"));
 		
 		dao.saveAll(customers);
+	}
+
+	@Override
+	public Long deleteCustomer(Long id) {
+		dao.deleteById(id);
+		return id;
 	}
 
 

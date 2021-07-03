@@ -27,6 +27,9 @@ public class Customer implements Serializable{
 	
 	@Column(name = "E_MAIL")
 	private String e_mail;
+	
+	@Column(name = "PHONE")
+	private String phone;
 
 	public Long getId() {
 		return id;
@@ -58,13 +61,23 @@ public class Customer implements Serializable{
 
 	public void setE_mail(String e_mail) {
 		this.e_mail = e_mail;
+	}	
+
+	public String getPhone() {
+		return phone;
 	}
 
-	public Customer(String name, String surname, String e_mail) {
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Customer(String name, String surname, 
+			String e_mail, String phone) {
 		
 		this.name = name;
 		this.surname = surname;
 		this.e_mail = e_mail;
+		this.phone = phone;
 	}
 	
 	public Customer() {}

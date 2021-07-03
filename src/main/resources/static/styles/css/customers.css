@@ -3,6 +3,11 @@ body{
     background:#eee;
 }
 
+dialog{
+	width:200px;
+	background:#f8f9fa
+}
+
 .customerWidth{
 	flex: 0 0 auto;
     width: 100%;

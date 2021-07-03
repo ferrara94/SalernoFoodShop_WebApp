@@ -8,6 +8,8 @@
 		<link th:href="@{/styles/css/homepage.css}" rel="stylesheet" />
 		<link th:href="@{/styles/css/customers.css}" rel="stylesheet" />
 	
+		<script type="text/javascript" th:src="@{/js/closeDialog.js}"></script>
+		
 	</head>
 	
 	 <body>
@@ -31,8 +33,28 @@
         <!-- <!-- Product section-->
         <section class="py-1">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
+                <div th:if="${condition} == 'false'" 
+                	class="row gx-4 gx-lg-5 align-items-center">
+                	
+                	<!-- DIALOG -->
+                    <dialog id="dialog" open>
+					<p>
+						<q th:text="${msg}"></q>
+						
+						</p>
+					<button th:onclick="closeDialog()">OK</button>
+					</dialog>
+					<!-- END DIALOG -->
                     
+                </div>
+                <div th:if="${condition} == 'true'" 
+                	class="row gx-4 gx-lg-5 align-items-center">
+                    <dialog id="dialog" open>
+					<p>
+						<q th:text="${msg}"></q>
+						</p>
+						<button th:onclick="closeDialog()">OK</button>
+					</dialog>
                     
                 </div>
             </div>
@@ -56,7 +78,7 @@
 				                </h4>
 				                
 				                <a class="team-contact-link" href="tel:+19871625346">
-				                	<i class="fe-icon-phone"></i>+1 (987) 162 53 46</a>
+				                	<i th:text="${customer.getPhone()}" class="fe-icon-phone"></i></a>
 				                <a class="team-contact-link" href="mailto:info@example.com">
 				                	<i th:text="${customer.getE_mail()}" class="fe-icon-mail"></i></a>
 				                

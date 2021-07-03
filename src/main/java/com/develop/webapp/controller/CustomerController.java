@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -39,9 +38,39 @@ public class CustomerController {
 		return "customer";
 	}
 	
-	@DeleteMapping(value = "customer/delete/{id}")
-	public void deleteCustomer(@PathVariable Long id) {
+	@GetMapping(value = "customer/delete/{id}")
+	public String deleteCustomer(@PathVariable Long id, Model model) {
 		
+		Customer c = service.getCustomer(id);
+				 
+		if(c==null) {
+			String msg = "Customer with ID_NUMBER " + id + " is not present";
+			
+			List<Customer> customers = service.getCustomers();
+			
+			model.addAttribute("infoPage", "Customers");
+			model.addAttribute("customers", customers);
+			model.addAttribute("condition", "false");
+			model.addAttribute("msg", msg);
+			
+			return "customers";
+		} else {
+			service.deleteCustomer(id);
+			
+			String msg = "Customer with ID_NUMBER " +
+					id + " successfully removed";
+			
+			List<Customer> customers = service.getCustomers();
+			
+			model.addAttribute("infoPage", "Customers");
+			model.addAttribute("customers", customers);
+			model.addAttribute("condition", "true");
+			model.addAttribute("msg", msg);
+			
+		}
+		
+		return "customers";
+				
 	}
 	
 	
