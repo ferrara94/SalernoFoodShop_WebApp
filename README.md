@@ -58,10 +58,13 @@ Classes which implement JPA interfaces have the **DAO** at the end of the name a
 
 In addition, there are also functionalities related to **Foreign Key** and **external relations** (e.g. **OneToOne|OneToMany|ManyToOne**).
 
-![image](https://user-images.githubusercontent.com/45211249/124113164-696c6780-da6b-11eb-8061-a26a96831d85.png)
+![image](https://user-images.githubusercontent.com/45211249/124300613-0bb94780-db5f-11eb-8ccd-1f3383c9555b.png)
 
 ---
 #### > execution
 
 ![image](https://user-images.githubusercontent.com/45211249/124114446-df250300-da6c-11eb-848a-9efa1bc906cc.png)
+
+![image](https://user-images.githubusercontent.com/45211249/124300936-63f04980-db5f-11eb-8ad6-87f233a71bba.png)
+
 
