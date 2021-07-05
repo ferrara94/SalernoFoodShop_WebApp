@@ -38,6 +38,7 @@ where the *project* is located (into the project folder)
 - [ ] HTML & CSS
 - [ ] H2 database
 - [ ] Spring Web Modules
+- [ ] Spring Security
 - [ ] Tomcat (provided by SpringBoot)
 
 ---
