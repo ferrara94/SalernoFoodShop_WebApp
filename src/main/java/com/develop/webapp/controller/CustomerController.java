@@ -33,12 +33,26 @@ public class CustomerController {
 	public String getCustomer(@PathVariable Long id, Model model) {
 		
 		Customer c = service.getCustomer(id);
+		
+		if(c==null) {
+			String msg = "Customer with ID_NUMBER " + id + " is not present";
+			
+			List<Customer> customers = service.getCustomers();
+			
+			model.addAttribute("infoPage", "Customers");
+			model.addAttribute("customers", customers);
+			model.addAttribute("condition", "false");
+			model.addAttribute("msg", msg);
+			
+			return "customers";
+		}
+		
 		model.addAttribute("customer", c);
 		
 		return "customer";
 	}
 	
-	@GetMapping(value = "customer/delete/{id}")
+	@GetMapping(value = "customers/customer/delete/{id}")
 	public String deleteCustomer(@PathVariable Long id, Model model) {
 		
 		Customer c = service.getCustomer(id);
