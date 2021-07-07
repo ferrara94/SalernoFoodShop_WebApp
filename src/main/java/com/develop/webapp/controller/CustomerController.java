@@ -3,6 +3,7 @@ package com.develop.webapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ public class CustomerController {
 	CustomerService service;
 
 	@GetMapping(value ="customers/all")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String getCustomers(Model model) {
 		
 		List<Customer> customers = service.getCustomers();
